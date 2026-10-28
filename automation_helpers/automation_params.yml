@@ -1,0 +1,415 @@
+rabi:
+  workflow_parameters:
+    q0:
+      amplitudes: &id001
+      - 0.0
+      - 0.03333333333333333
+      - 0.06666666666666667
+      - 0.1
+      - 0.13333333333333333
+      - 0.16666666666666666
+      - 0.2
+      - 0.23333333333333334
+      - 0.26666666666666666
+      - 0.3
+      - 0.3333333333333333
+      - 0.36666666666666664
+      - 0.4
+      - 0.43333333333333335
+      - 0.4666666666666667
+      - 0.5
+      - 0.5333333333333333
+      - 0.5666666666666667
+      - 0.6
+      - 0.6333333333333333
+      - 0.6666666666666666
+      - 0.7
+      - 0.7333333333333333
+      - 0.7666666666666666
+      - 0.8
+      - 0.8333333333333334
+      - 0.8666666666666667
+      - 0.9
+      - 0.9333333333333333
+      - 0.9666666666666667
+      - 1.0
+    q1:
+      amplitudes: *id001
+    q2:
+      amplitudes: *id001
+    q3:
+      amplitudes: *id001
+    q4:
+      amplitudes: *id001
+    q5:
+      amplitudes: *id001
+  options:
+    evaluate: true
+    update: true
+    count: 1024
+    active_reset: false
+    do_raw_data_plotting: false
+    inject_results:
+      paths:
+      - automation_helpers/saved_results/rabi_results.json
+      use: emulation
+      check_shapes: false
+  evaluation_parameters:
+    fit_r2_thresholds:
+      q0: 0.85
+      q1: 0.85
+      q2: 0.85
+      q3: 0.85
+      q4: 0.85
+      q5: 0.85
+    parameter_thresholds:
+      q0: 0.0001
+      q1: 0.0001
+      q2: 0.0001
+      q3: 0.0001
+      q4: 0.0001
+      q5: 0.0001
+ramsey:
+  workflow_parameters:
+    q0:
+      delays: &id002
+      - 0.0
+      - 2.6666666666666664e-08
+      - 5.333333333333333e-08
+      - 7.999999999999999e-08
+      - 1.0666666666666666e-07
+      - 1.333333333333333e-07
+      - 1.5999999999999998e-07
+      - 1.8666666666666664e-07
+      - 2.133333333333333e-07
+      - 2.4e-07
+      - 2.666666666666666e-07
+      - 2.933333333333333e-07
+      - 3.1999999999999995e-07
+      - 3.4666666666666665e-07
+      - 3.733333333333333e-07
+      - 4.0e-07
+      - 4.266666666666666e-07
+      - 4.5333333333333326e-07
+      - 4.8e-07
+      - 5.066666666666667e-07
+      - 5.333333333333332e-07
+      - 5.599999999999999e-07
+      - 5.866666666666666e-07
+      - 6.133333333333333e-07
+      - 6.399999999999999e-07
+      - 6.666666666666666e-07
+      - 6.933333333333333e-07
+      - 7.199999999999999e-07
+      - 7.466666666666666e-07
+      - 7.733333333333333e-07
+      - 8.0e-07
+      detunings: 1600000.0
+    q1:
+      delays: *id002
+      detunings: 1600000.0
+    q2:
+      delays: *id002
+      detunings: 1600000.0
+    q3:
+      delays: *id002
+      detunings: 1600000.0
+    q4:
+      delays: *id002
+      detunings: 1600000.0
+    q5:
+      delays: *id002
+      detunings: 1600000.0
+  options:
+    evaluate: true
+    update: true
+    count: 1024
+    active_reset: false
+    do_raw_data_plotting: false
+    inject_results:
+      paths:
+      - automation_helpers/saved_results/ramsey_results.json
+      use: emulation
+      check_shapes: false
+  evaluation_parameters:
+    fit_r2_thresholds:
+      q0: 0.85
+      q1: 0.85
+      q2: 0.85
+      q3: 0.85
+      q4: 0.85
+      q5: 0.85
+    parameter_thresholds:
+      q0: 1.0e-07
+      q1: 1.0e-07
+      q2: 1.0e-07
+      q3: 1.0e-07
+      q4: 1.0e-07
+      q5: 1.0e-07
+rabi_fine:
+  workflow_parameters:
+    q0:
+      amplitudes: &id003
+      - 0.0
+      - 0.02
+      - 0.04
+      - 0.06
+      - 0.08
+      - 0.1
+      - 0.12
+      - 0.14
+      - 0.16
+      - 0.18
+      - 0.2
+      - 0.22
+      - 0.24
+      - 0.26
+      - 0.28
+      - 0.3
+      - 0.32
+      - 0.34
+      - 0.36
+      - 0.38
+      - 0.4
+      - 0.42
+      - 0.44
+      - 0.46
+      - 0.48
+      - 0.5
+      - 0.52
+      - 0.54
+      - 0.56
+      - 0.58
+      - 0.6
+      - 0.62
+      - 0.64
+      - 0.66
+      - 0.68
+      - 0.7000000000000001
+      - 0.72
+      - 0.74
+      - 0.76
+      - 0.78
+      - 0.8
+      - 0.8200000000000001
+      - 0.84
+      - 0.86
+      - 0.88
+      - 0.9
+      - 0.92
+      - 0.9400000000000001
+      - 0.96
+      - 0.98
+      - 1.0
+    q1:
+      amplitudes: *id003
+    q2:
+      amplitudes: *id003
+    q3:
+      amplitudes: *id003
+    q4:
+      amplitudes: *id003
+    q5:
+      amplitudes: *id003
+  options:
+    evaluate: true
+    update: true
+    count: 1024
+    active_reset: false
+    do_raw_data_plotting: false
+    inject_results:
+      paths:
+      - automation_helpers/saved_results/rabi_fine_results.json
+      use: emulation
+      check_shapes: false
+  evaluation_parameters:
+    fit_r2_thresholds:
+      q0: 0.85
+      q1: 0.85
+      q2: 0.85
+      q3: 0.85
+      q4: 0.85
+      q5: 0.85
+    parameter_thresholds:
+      q0: 0.0001
+      q1: 0.0001
+      q2: 0.0001
+      q3: 0.0001
+      q4: 0.0001
+      q5: 0.0001
+drag:
+  workflow_parameters:
+    q0:
+      q_scalings: &id004
+      - -0.05
+      - -0.045000000000000005
+      - -0.04
+      - -0.035
+      - -0.030000000000000002
+      - -0.025
+      - -0.020000000000000004
+      - -0.015
+      - -0.010000000000000002
+      - -0.0050000000000000044
+      - 0.0
+      - 0.0049999999999999975
+      - 0.009999999999999995
+      - 0.015
+      - 0.020000000000000004
+      - 0.024999999999999994
+      - 0.03
+      - 0.035
+      - 0.039999999999999994
+      - 0.045
+      - 0.05
+    q1:
+      q_scalings: *id004
+    q2:
+      q_scalings: *id004
+    q3:
+      q_scalings: *id004
+    q4:
+      q_scalings: *id004
+    q5:
+      q_scalings: *id004
+  options:
+    evaluate: false
+    update: true
+    count: 1024
+    active_reset: false
+    do_raw_data_plotting: false
+    inject_results:
+      paths:
+      - automation_helpers/saved_results/drag_results.json
+      use: emulation
+      check_shapes: false
+rabi_fine_2:
+  workflow_parameters:
+    q0:
+      amplitudes: &id005
+      - 0.0
+      - 0.02
+      - 0.04
+      - 0.06
+      - 0.08
+      - 0.1
+      - 0.12
+      - 0.14
+      - 0.16
+      - 0.18
+      - 0.2
+      - 0.22
+      - 0.24
+      - 0.26
+      - 0.28
+      - 0.3
+      - 0.32
+      - 0.34
+      - 0.36
+      - 0.38
+      - 0.4
+      - 0.42
+      - 0.44
+      - 0.46
+      - 0.48
+      - 0.5
+      - 0.52
+      - 0.54
+      - 0.56
+      - 0.58
+      - 0.6
+      - 0.62
+      - 0.64
+      - 0.66
+      - 0.68
+      - 0.7000000000000001
+      - 0.72
+      - 0.74
+      - 0.76
+      - 0.78
+      - 0.8
+      - 0.8200000000000001
+      - 0.84
+      - 0.86
+      - 0.88
+      - 0.9
+      - 0.92
+      - 0.9400000000000001
+      - 0.96
+      - 0.98
+      - 1.0
+    q1:
+      amplitudes: *id005
+    q2:
+      amplitudes: *id005
+    q3:
+      amplitudes: *id005
+    q4:
+      amplitudes: *id005
+    q5:
+      amplitudes: *id005
+  options:
+    evaluate: true
+    update: true
+    count: 1024
+    active_reset: false
+    do_raw_data_plotting: false
+    inject_results:
+      paths:
+      - automation_helpers/saved_results/rabi_fine_2_results.json
+      use: emulation
+      check_shapes: false
+  evaluation_parameters:
+    fit_r2_thresholds:
+      q0: 0.85
+      q1: 0.85
+      q2: 0.85
+      q3: 0.85
+      q4: 0.85
+      q5: 0.85
+    parameter_thresholds:
+      q0: 0.0001
+      q1: 0.0001
+      q2: 0.0001
+      q3: 0.0001
+      q4: 0.0001
+      q5: 0.0001
+sqrb:
+  workflow_parameters:
+    q0:
+      length_cliffords: &id006
+      - 1
+      - 2
+      - 4
+      - 8
+      - 16
+      - 32
+      - 64
+      - 128
+      - 256
+      variations: 4
+    q1:
+      length_cliffords: *id006
+      variations: 4
+    q2:
+      length_cliffords: *id006
+      variations: 4
+    q3:
+      length_cliffords: *id006
+      variations: 4
+    q4:
+      length_cliffords: *id006
+      variations: 4
+    q5:
+      length_cliffords: *id006
+      variations: 4
+  options:
+    update: true
+    count: 512
+    transition: ge
+    do_raw_data_plotting: false
+    inject_results:
+      paths:
+      - automation_helpers/saved_results/sqrb_results.json
+      use: emulation
+      check_shapes: false

@@ -1,0 +1,13 @@
+# LabOne Q output and logs
+laboneq_output/
+qpu_saves/
+*.html
+*.log
+
+# Python / Jupyter
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
