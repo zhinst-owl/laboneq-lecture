@@ -1,0 +1,27 @@
+name: Run the notebooks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1"   # every Monday: catch LabOne Q releases that move an API
+
+jobs:
+  notebooks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt nbconvert
+      - name: Execute every notebook in emulation
+        env:
+          MPLBACKEND: Agg
+        run: |
+          for nb in 01_Basic_Concepts 02_Case_Study_ef_Rabi 03_Operations_QPU_Topology \
+                    04_Workflows 05_Workflow_Exercise_Solution 06_Automation; do
+            jupyter nbconvert --to notebook --execute "$nb.ipynb" \
+              --output "/tmp/$nb.ipynb" --ExecutePreprocessor.timeout=1200
+          done

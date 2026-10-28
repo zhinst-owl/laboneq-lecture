@@ -1,0 +1,7 @@
+# LabOne Q and the Applications Library — the two packages the course is about.
+laboneq==26.7.0
+laboneq-applications==26.7.0
+# Used by LabOne Q's FolderStore logbook when it saves results (Lecture 06).
+xarray>=2024.1
+# To open and run the notebooks.
+jupyterlab>=4.0
