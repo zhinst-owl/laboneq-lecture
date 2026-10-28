@@ -1,5 +1,6 @@
 # LabOne Q output and logs
 laboneq_output/
+lattice_4x5_setup.json
 qpu_saves/
 *.html
 *.log

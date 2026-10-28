@@ -2,9 +2,10 @@
 
 A hands-on course on [LabOne Q](https://github.com/zhinst/laboneq), Zurich Instruments' software framework
 for quantum computing, and its [Applications Library](https://github.com/zhinst/laboneq-applications).
-Six notebooks take you from the first `DeviceSetup` to a fully automated multi-qubit calibration pipeline.
+Six notebooks take you from the first `DeviceSetup` to a fully automated multi-qubit calibration pipeline,
+plus an extra lesson on installing a multi-qubit system on a ZQCS.
 
-Everything runs **without hardware**: every notebook compiles against a real instrument description in
+Everything runs **without hardware**: every notebook (the ZQCS extra lesson aside — see the table) compiles against a real instrument description in
 LabOne Q's emulation mode, so you see the real compiler, the real pulse sheets and the real analysis code —
 just no rack. Nothing here needs a LabOne installation or a licence.
 
@@ -38,6 +39,7 @@ Work through the notebooks in order. Each one is self-contained and builds its o
 | 4 | `04_Workflows.ipynb` | The workflow DSL: tasks, workflows, `compile_experiment` / `run_experiment`, and a shipped Amplitude Rabi workflow — its task tree, pulling one task's output, `temporary_parameters`, and the pulse sheet straight from a workflow result. |
 | 5 | `05_Workflow_Exercise.ipynb` | **Exercise.** Rewrite the e-f Rabi of the case study the way every experiment in the Applications Library is written: `@dsl.qubit_experiment`, quantum operations, the standard workflow signature, and a conditional analysis branch. Two cells to fill in; `05_Workflow_Exercise_Solution.ipynb` has the answer. |
 | 6 | `06_Automation.ipynb` | The automation framework: layers, nodes, dependencies and retry logic on a toy example, `WorkflowAutomation` for experiment workflows, result injection, and a six-layer single-qubit tune-up (Rabi → Ramsey → Rabi → DRAG → Rabi → RB) for three qubits of a six-qubit chip — including a qubit that fails evaluation and the logic that recovers it automatically. |
+| 7 | `07_Extra_Installing_a_Multi_Qubit_System.ipynb` | **Extra lesson, Gen4.** The first day with a ZQCS: a 4 × 5 lattice of flux-tunable transmons with 31 couplers written out line by line with the device-setup API, one ZQCS port per line; line calibration saved once and loaded everywhere; a QPU on top with `resonator_spectroscopy`, `amplitude_rabi` and `ramsey` on all qubits in parallel; and an installation smoke test that fires every flux, drive and readout line of the system — 152 signals — written in the plain DSL, no helper, no workflow. Needs the ZQCS driver (`zhinst-zqcs`), which ships with a ZQCS installation; on the open release it stops at `session.connect`. |
 
 ## The chip in Lecture 6
 

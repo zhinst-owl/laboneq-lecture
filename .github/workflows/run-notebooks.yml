@@ -21,7 +21,7 @@ jobs:
           MPLBACKEND: Agg
         run: |
           for nb in 01_Basic_Concepts 02_Case_Study_ef_Rabi 03_Operations_QPU_Topology \
-                    04_Workflows 05_Workflow_Exercise_Solution 06_Automation; do
+                    04_Workflows 06_Automation; do  # 07 needs the ZQCS driver, not on PyPI
             jupyter nbconvert --to notebook --execute "$nb.ipynb" \
               --output "/tmp/$nb.ipynb" --ExecutePreprocessor.timeout=1200
           done
